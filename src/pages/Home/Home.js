@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import Filter from "./container/Filter";
 
 const Home = () => {
-    return <div>Home</div>
+  return (
+    <div className="home">
+      <Filter />
+    </div>
+  );
 };
 
 export default Home;
