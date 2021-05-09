@@ -1,9 +1,10 @@
 .home {
+  height: calc(100vh - 8rem);
   &__filter {
-    background: #F2F2F2;
+    height: 19%;
+    background: #f2f2f2;
     display: flex;
     justify-content: space-between;
-    height: 11rem;
     border-bottom: 1px solid #707070;
     padding: 3.5rem 5rem;
 
@@ -11,9 +12,44 @@
       display: flex;
     }
 
-    &--2 {}
+    &--2 {
+    }
+  }
+
+  &__contents {
+    display: inline-block;
+    width: 100vw;
+    height: 81%;
   }
   &__dropdown {
     margin-left: 4rem;
+  }
+
+  &__lists {
+    display: inline-block;
+    width: 30%;
+    background: #f2f2f2;
+    height: 100%;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding: 1rem 5rem;
+  }
+
+  &__listDetails {
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    height: 8rem;
+    transition: 0.3s;
+    &:hover {
+      background: darken(#f2f2f2, 3%);
+    }
+  }
+
+  &__book {
+    display: inline-block;
+    width: 70%;
   }
 }

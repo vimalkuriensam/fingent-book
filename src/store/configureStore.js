@@ -4,6 +4,7 @@ import { encryptTransform } from "redux-persist-transform-encrypt";
 import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
+
 import bookReducer from "../reducers/books.reducer";
 import utilsReducer from "../reducers/utils.reducer";
 
@@ -25,7 +26,7 @@ const store = createStore(
   persistReducer(
     persistConfig,
     combineReducers({
-      book: bookReducer,
+      books: bookReducer,
       utils: utilsReducer,
     })
   ),
