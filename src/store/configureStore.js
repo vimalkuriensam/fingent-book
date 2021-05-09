@@ -5,6 +5,7 @@ import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import bookReducer from "../reducers/books.reducer";
+import utilsReducer from "../reducers/utils.reducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const encryptor = encryptTransform({
@@ -18,7 +19,6 @@ const persistConfig = {
   key: "root",
   storage,
   transforms: [encryptor],
-  blacklist: ["utils"],
 };
 
 const store = createStore(
@@ -26,6 +26,7 @@ const store = createStore(
     persistConfig,
     combineReducers({
       book: bookReducer,
+      utils: utilsReducer,
     })
   ),
   composeEnhancers(applyMiddleware(thunk))
