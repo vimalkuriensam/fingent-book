@@ -9,7 +9,7 @@ const Search = () => (
     x="0px"
     y="0px"
     viewBox="0 0 512.005 512.005"
-    style={{ enableBackground: "new 0 0 512.005 512.005" }}
+    style={{ enableBackground: "new 0 0 512.005 512.005", height: "2.4rem" }}
     space="preserve"
   >
     <g>

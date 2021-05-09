@@ -1,3 +1,18 @@
 .home {
-    
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+    height: 11rem;
+    border-bottom: 1px solid #707070;
+    padding: 3.5rem 5rem;
+
+    &--1 {
+      display: flex;
+    }
+
+    &--2 {}
+  }
+  &__dropdown {
+    margin-left: 4rem;
+  }
 }

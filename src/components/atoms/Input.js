@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const Input = () => {
-    return <input />
-}
+const Input = ({ className, placeholder="input text" }) => {
+  return <input className={className} placeholder={placeholder} />;
+};
 
 export default Input;
