@@ -1,0 +1,16 @@
+.btn {
+  width: 15rem;
+  height: 4rem;
+  outline: none;
+  cursor: pointer;
+  color: $color-black;
+  border: none;
+  &--primary {
+    background: #f59f0a;
+    border: 1px solid #707070;
+  }
+
+  &--secondary {
+    background: #646464;
+  }
+}

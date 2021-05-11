@@ -1,0 +1,21 @@
+.header {
+  height: 8rem;
+  background: $color-black;
+  padding: 0 5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+
+  &__main {
+    > * {
+      display: inline-block;
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+  }
+}
