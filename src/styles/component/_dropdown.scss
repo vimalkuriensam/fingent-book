@@ -22,6 +22,10 @@
 
   &__values {
     display: none;
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    z-index: 1000;
     > ul {
       list-style: none;
       border: 1px solid #707070;
@@ -31,6 +35,7 @@
         width: 100%;
         background: $color-white;
         cursor: pointer;
+        padding: 0.5rem 1rem;
         &:hover {
           background: darken($color-white, 5%);
         }
