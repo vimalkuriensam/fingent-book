@@ -35,6 +35,7 @@
         width: 100%;
         background: $color-white;
         cursor: pointer;
+        padding: 0.5rem 1rem;
         &:hover {
           background: darken($color-white, 5%);
         }

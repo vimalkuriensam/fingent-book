@@ -3,7 +3,7 @@ export const addTextFilter = (text) => ({
   text,
 });
 
-export const addSortFilter = (sort) => ({
+export const addSortFilter = (sorting) => ({
   type: "ADD_SORT_FILTER",
-  sort,
+  sorting,
 });

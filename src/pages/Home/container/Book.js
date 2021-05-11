@@ -18,6 +18,7 @@ const Book = ({ selected, book, selectedPage }) => {
   };
   const getBookInfo = () => {
     const selectedBook = book.find((val) => val.ebno === selected);
+    console.log(selectedBook, selected);
     const title = selectedBook.title;
     const author = selectedBook.author;
     const date = selectedBook.date;

@@ -11,6 +11,7 @@ const Input = ({
       className={className}
       placeholder={placeholder}
       onChange={onInputChange}
+      value={value}
     />
   );
 };
