@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: "BoilerPlate",
+      title: "Fingent EReader",
       cache: false,
       publicPath: "/dist",
       filename: "../index.html",
