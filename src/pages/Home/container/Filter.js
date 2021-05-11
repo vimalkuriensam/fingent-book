@@ -3,6 +3,7 @@ import Button from "../../../components/atoms/Button";
 
 import Dropdown from "../../../components/atoms/Dropdown";
 import Search from "../../../components/molecules/Search";
+import history from "../../../utils/history";
 import { DROPDOWN_DATA, INPUT_PLACEHOLDER } from "../data";
 
 const Filter = () => {
@@ -24,7 +25,7 @@ const Filter = () => {
         <Button
           variant="primary"
           content="Add New Book"
-          onHandleButtonClick={() => console.log("Button Clicked")}
+          onHandleButtonClick={() => history.push("/add")}
         />
       </div>
     </div>
