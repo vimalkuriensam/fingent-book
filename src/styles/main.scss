@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "bellmt-bold";
+  src: url("/assets/fonts/BellMT-Bold.ttf");
+}
+
+@font-face {
+  font-family: "georgia-bold";
+  src: url("/assets/fonts/georgia-bold.ttf");
+}
+
+@font-face {
+  font-family: "georgia-regular";
+  src: url("/assets/fonts/georgia-regular.ttf");
+}
+
+@font-face {
+  font-family: "georgia-italic";
+  src: url("/assets/fonts/georgia-italic.ttf");
+}
+
 @import "./abstracts/variables";
 @import "./abstracts/functions";
 @import "./abstracts/mixins";
@@ -6,3 +26,13 @@
 @import "./base/base";
 @import "./base/typography";
 @import "./base/utilities";
+
+@import "./component/button";
+@import "./component/dropdown";
+@import "./component/home";
+@import "./component/search";
+
+@import "./layout/header";
+@import "./layout/layout";
+
+@import "./vendors/scroll";
