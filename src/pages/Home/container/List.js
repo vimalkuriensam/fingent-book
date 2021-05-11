@@ -1,13 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
+import { addSelected } from "../../../actions/books.action";
 import Text from "../../../components/atoms/Text";
 import Title from "../../../components/atoms/Title";
 
-const List = ({ bookList }) => {
+const List = ({ bookList, dispatch }) => {
+  const setSelected = (id) => dispatch(addSelected({ selected: id }));
   return (
     <div className="home__lists">
       {bookList.map((lists, index) => (
-        <div key={index} className="home__listDetails">
+        <div
+          key={index}
+          className="home__listDetails"
+          onClick={setSelected.bind(this, lists.ebno)}
+        >
           <div className="home__list">
             <Title variant="primary-2" content={lists.title} />
             -
@@ -20,7 +26,7 @@ const List = ({ bookList }) => {
 };
 
 const mapStateToProps = (state) => ({
-  bookList: state.books,
+  bookList: state.books.book,
 });
 
 export default connect(mapStateToProps)(List);

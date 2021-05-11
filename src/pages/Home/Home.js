@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { addBooks } from "../../actions/books.action";
+import { addBooks, resetSelected } from "../../actions/books.action";
 import Book from "./container/Book";
 import Filter from "./container/Filter";
 import List from "./container/List";
 
 const Home = ({ dispatch }) => {
   useEffect(() => {
+    
     dispatch(
       addBooks({
         ebno: "1",
@@ -26,6 +27,47 @@ const Home = ({ dispatch }) => {
         pageContent: "book on the wizard boy",
       })
     );
+
+    dispatch(
+      addBooks({
+        ebno: "3",
+        title: "Harry Potter",
+        author: "J. K. Rowling",
+        date: 321,
+        pageContent: "book on the wizard boy",
+      })
+    );
+
+    dispatch(
+      addBooks({
+        ebno: "4",
+        title: "Harry Potter",
+        author: "J. K. Rowling",
+        date: 321,
+        pageContent: "book on the wizard boy",
+      })
+    );
+
+    dispatch(
+      addBooks({
+        ebno: "5",
+        title: "Harry Potter",
+        author: "J. K. Rowling",
+        date: 321,
+        pageContent: "book on the wizard boy",
+      })
+    );
+
+    dispatch(
+      addBooks({
+        ebno: "6",
+        title: "Harry Potter",
+        author: "J. K. Rowling",
+        date: 321,
+        pageContent: "book on the wizard boy",
+      })
+    );
+    dispatch(resetSelected());
   }, []);
   return (
     <div className="home">
