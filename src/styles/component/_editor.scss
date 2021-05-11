@@ -1,4 +1,37 @@
 .editor {
   padding: 0 5rem;
-  min-height: calc(100vh - 8rem);
+  min-height: calc(100vh - 9rem);
+
+  &__edit {
+    height: calc(100vh - 15rem);
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    > * {
+      &:first-child {
+        display: inline-block;
+        width: 10rem;
+      }
+    }
+
+    &--editor {
+        display: inline-block;
+        width: 80%;
+        height: 3.5rem;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+  }
+
+  &__cta {
+    float: right;
+    > * {
+      &:not(:first-child) {
+        margin-left: 3rem;
+      }
+    }
+  }
 }

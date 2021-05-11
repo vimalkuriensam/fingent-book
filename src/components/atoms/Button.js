@@ -6,13 +6,14 @@ const Button = ({
   variant = "primary",
   className,
   content,
+  color = "#000",
   onHandleButtonClick,
 }) => (
   <button
     onClick={onHandleButtonClick}
     className={`btn btn--${variant} ${className}`}
   >
-    <Text variant="tertiary-1" content={content} />
+    <Text color={color} variant="tertiary-1" content={content} />
   </button>
 );
 
