@@ -4,9 +4,11 @@
   "description": "Ebook Reader",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --open --env development --config webpack.dev.js",
+    "start": "node server/index.js",
+    "dev": "webpack-dev-server --open --env development --config webpack.dev.js",
     "build": "webpack --env production --config webpack.prod.js",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Vimal Kurien Sam",
   "license": "ISC",
@@ -25,6 +27,7 @@
     "draft-js-export-html": "^1.4.1",
     "draft-js-import-html": "^1.4.1",
     "draftjs-to-html": "^0.9.1",
+    "express": "^4.17.1",
     "html-to-draftjs": "^1.5.0",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.1.0",
