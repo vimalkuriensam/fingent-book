@@ -7,6 +7,7 @@ import logger from "redux-logger";
 
 import bookReducer from "../reducers/books.reducer";
 import utilsReducer from "../reducers/utils.reducer";
+import filterReducer from "../reducers/filter.reducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const encryptor = encryptTransform({
@@ -28,6 +29,7 @@ const store = createStore(
     combineReducers({
       books: bookReducer,
       utils: utilsReducer,
+      filters: filterReducer
     })
   ),
   composeEnhancers(applyMiddleware(thunk))

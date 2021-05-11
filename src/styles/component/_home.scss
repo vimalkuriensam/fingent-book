@@ -1,6 +1,6 @@
 .home {
   height: calc(100vh - 8rem);
-  overflow-x: hidden;
+  overflow: hidden;
   &__filter {
     height: 19%;
     background: #f2f2f2;
@@ -32,15 +32,20 @@
     background: #f2f2f2;
     height: 100%;
     overflow-y: scroll;
+
+    &--date {
+      float: right;
+    }
   }
 
   &__list {
     display: flex;
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 0 5rem;
   }
 
   &__listDetails {
+    padding: 1rem;
     cursor: pointer;
     border-bottom: 1px solid #ccc;
     height: 8rem;
@@ -48,6 +53,12 @@
     &:hover {
       background: darken(#f2f2f2, 3%);
     }
+  }
+
+  &__pageContent {
+    height: 65vh;
+    overflow-y: scroll;
+    padding: 2rem;
   }
 
   &__book {

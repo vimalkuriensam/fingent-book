@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import moment from 'moment';
 import { addSelected } from "../../../actions/books.action";
 import Text from "../../../components/atoms/Text";
 import Title from "../../../components/atoms/Title";
@@ -19,6 +20,7 @@ const List = ({ bookList, dispatch }) => {
             -
             <Text variant="primary-1" content={lists.author} />
           </div>
+          <div className="home__lists--date">{moment(lists.date).format('DD-MM-YYYY')}</div>
         </div>
       ))}
     </div>

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
-import { v4 as uuidv4 } from 'uuid';
-import moment from 'moment';
+import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import Button from "../../components/atoms/Button";
@@ -16,27 +16,29 @@ import { connect } from "react-redux";
 const Edit = ({ dispatch }) => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [title, setTitle] = useState("");
-  const [subtitle, setSubtitle] = useState("");
+  const [author, setAuthor] = useState("");
 
   const onInputChange = (type, e) => {
     const { value } = e.target;
     switch (type) {
       case "title":
         return setTitle(value);
-      case "subtitle":
-        return setSubtitle(value);
+      case "author":
+        return setAuthor(value);
     }
   };
 
   const onSaveBook = () => {
-    dispatch(addBooks({
-      ebno: uuidv4(),
-      title,
-      author: "abc",
-      date: moment.now(),
-      pageContent: draftToHtml(convertToRaw(editorState.getCurrentContent()))
-    }))
-  }
+    dispatch(
+      addBooks({
+        ebno: uuidv4(),
+        author,
+        date: moment.now(),
+        pageContent: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+      })
+    );
+    history.push("/");
+  };
 
   const onEditorStateChange = (editorState) => setEditorState(editorState);
   return (
@@ -52,19 +54,19 @@ const Edit = ({ dispatch }) => {
           />
         </div>
         <div className="editor__input">
-          <Title variant="primary" content="Subtitle" />
+          <Title variant="primary" content="Author" />
           <Input
-            onInputChange={onInputChange.bind(this, "subtitle")}
-            value={subtitle}
+            onInputChange={onInputChange.bind(this, "author")}
+            value={author}
             className="editor__input--editor"
-            placeholder="Subtitle"
+            placeholder="Author"
           />
         </div>
         <Editor
           editorState={editorState}
           toolbarClassName="toolbarClassName"
           wrapperClassName="wrapperClassName"
-          editorClassName="editorClassName"
+          editorClassName="editor__panel"
           onEditorStateChange={onEditorStateChange}
         />
       </div>
@@ -75,7 +77,11 @@ const Edit = ({ dispatch }) => {
           content="Cancel"
           onHandleButtonClick={() => history.push("/")}
         />
-        <Button variant="primary" content="Save" onHandleButtonClick={onSaveBook} />
+        <Button
+          variant="primary"
+          content="Save"
+          onHandleButtonClick={onSaveBook}
+        />
       </div>
     </div>
   );

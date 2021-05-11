@@ -26,6 +26,10 @@
     }
   }
 
+  &__panel {
+      height: 48vh;
+  }
+
   &__cta {
     float: right;
     > * {
